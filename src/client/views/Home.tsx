@@ -5,7 +5,7 @@ import type { IChirp } from '../utils/types'
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-const Home: React.FC<HomeProps> = (props) => {
+const Home: React.FC<HomeProps> = props => {
 
     const [chirps, setChirps] = useState<IChirp[]>([]);
     // page renders blank array, fetch occurs, page rerenders with IChirp array

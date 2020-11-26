@@ -33,7 +33,7 @@ const App: React.FC<AppProps> = (props, state) => {
 }
 
 // interface is a way to define a type
-interface AppProps { } // this is blank because App in index.tsx is recieving no props
+interface AppProps {} // this is blank because App in index.tsx is recieving no props
 
 // interfaces describes a component's props (if it has any)
 
