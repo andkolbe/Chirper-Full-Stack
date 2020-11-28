@@ -41,10 +41,8 @@ export default App;
 
 // BrowserRouter can be renamed anything
 // think of Switch like a switch board
-// Route is self closing
-// Route always has two props attached to it, path and component
+// Route is not self closing when using Hooks
 // path reads the url bar
-// you tell component which component you want to show up on the path
 // Route paths need to have the word exact or they will only route in alphbetical order
 // Link replaces any anchor or button element that has to lead you to a different page
 // Link needs to have a prop called 'to' that needs to a string of some kind
