@@ -1,17 +1,15 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
-import type { IChirp } from '../utils/types'; // type means only import typescript data instead of compiled javascript. Easier on the system
+import Layout from '../components/Layout';
 import { useParams, useHistory } from 'react-router-dom';
 
 
 const Admin: React.FC<AdminProps> = props => {
 
-    const { id } = useParams();
+    const { id } = useParams<{id: string}>();
 
     const history = useHistory();
 
-    const [chirp, setChirp] = useState<IChirp>(null);
     const [content, setContent] = useState<string>('');
     const [location, setLocation] = useState<string>('');
 
@@ -19,12 +17,13 @@ const Admin: React.FC<AdminProps> = props => {
         const getChirp = async () => {
             const res = await fetch(`/api/chirps/${id}`); // fetch your list of chirps
             const chirp = await res.json(); // parse json to javascript
-            setChirp(chirp); // sets a new state from blank to chirp data
+            setContent(chirp.content); // sets a new state from blank to chirp data
+            setLocation(chirp.location);
         };
         getChirp(); // call the function because here it is not anonymous
     }, []);
     // whatever goes in the array, triggers the useEffect to rerun
-    // we want it to be filled with the id data, so we fill the array with [id]
+    // only runs once on page load. we don't want it to rerun, therefore we will place a blank array so that it will always be blank
     // we cannot place async keyword at the top of useEffect. useEffects always returns a cleanup function even if you don't write it
     // cleanup function: return () => {}
     // async return a Promise, and useEffect returns a function. Put async inside of the function

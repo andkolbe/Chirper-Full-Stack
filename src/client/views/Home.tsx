@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
+import Layout from '../components/Layout';
 import type { IChirp } from '../utils/types'
 import moment from 'moment';
 import { Link } from 'react-router-dom';

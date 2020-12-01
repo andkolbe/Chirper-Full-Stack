@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
+import Layout from '../components/Layout';
 import { useHistory } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 
@@ -12,7 +12,7 @@ const NewChirp: React.FC<NewChirpProps> = props => {
     const [content, setContent] = useState<string>('');
     const [location, setLocation] = useState<string>('');
     const [error, setError] = useState(null);
-    //es6 array destructure  // first value corresponds with your current state, second value is the setState function for it
+    // es6 array destructure  // first value corresponds with your current state, second value is the setState function that updates it
     // unlike in class based components where this.setState handled all state changes, in hooks you have an individual setting state function for each useState you have 
     // with es6 destructuring, we can call the variables whatever we want 
     // userid replaces this.state.userid and setChirps replaces this.setState
